@@ -29,13 +29,13 @@ make
   * `r` Reset camera position to the origin
   * `z` Decrease the number of curve samples (For Bezier and BSpline)
   * `x` Increase the number of curve samples (For Bezier and BSpline)
-  *`[` Reset the subdivision depth to the control curve level (For Subdivision Curves)
-  *`]` Increase the subdivision depth (For Subdivision Curves)
-  *`1` Toggle display of Control Curve
-  *`2` Toggle display of Bezier Curve
-  *`3` Toggle display of BSpline Curve
-  *`4` Toggle display of Subdivision Curve
-  *`WASD` Movement around grid
+  * `[` Reset the subdivision depth to the control curve level (For Subdivision Curves)
+  * `]` Increase the subdivision depth (For Subdivision Curves)
+  * `1` Toggle display of Control Curve
+  * `2` Toggle display of Bezier Curve
+  * `3` Toggle display of BSpline Curve
+  * `4` Toggle display of Subdivision Curve
+  * `WASD` Movement around grid
   * `ESC` Exit program
 
 
