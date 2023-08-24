@@ -50,4 +50,4 @@ make
 * Better line drawing (currently using OpenGL's default GL_LINES primitive which is ugly)
                        
 ## Copyright and Attribution
-Copyright (c) 2023 eqdiag. Released under the [MIT License](https://github.com/eqdiag/curvEdit/blob/main/LICENSE.md).
+Copyright (c) 2023 eqdiag. Released under the [MIT License](https://github.com/eqdiag/curveEdit/blob/main/LICENSE.md).
