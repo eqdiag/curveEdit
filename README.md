@@ -40,8 +40,8 @@ make
 
 
 ## Mouse Controls
-  * `leftClick` Adds points to control curve
-  * `rightClick` Removes points from control curve
+  * `leftClick` Adds point to control curve
+  * `rightClick` Removes point from control curve
   * `mouseScroll` Zoom camera in/out
 
 ## Potential Future Additions
