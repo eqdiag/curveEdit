@@ -10,9 +10,9 @@ All dependencies are self-contained in this project using git's submodule system
 
 ```
 git clone https://github.com/eqdiag/curveEdit
-mkdir -p out/build
-cd out/build
-cmake ../..
+mkdir build
+cd build
+cmake ..
 make
 ```
 
