@@ -44,7 +44,7 @@ make
 * `rightClick` Removes points from control curve
 * `mouseScroll` Zoom camera in/out
 
-## Potential Future Addition
+## Potential Future Additions
 * Saving/Loading Curves
 * [Surfaces of revolution](https://en.wikipedia.org/wiki/Surface_of_revolution#:~:text=A%20surface%20of%20revolution%20is,is%20the%20solid%20of%20revolution.)
 * Better line drawing (currently using OpenGL's default GL_LINES primitive which is ugly)
