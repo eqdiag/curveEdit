@@ -9,7 +9,8 @@ Viewer::Viewer():
 	mMousePressed{false},
 	mMouseInit{false},
 	mMouseX{},
-	mMouseY{}
+	mMouseY{},
+	mMode{EditMode::CurveMode}
 {
 
 }
@@ -25,6 +26,12 @@ void Viewer::init()
 	mGrid.init();
 	mCursor.init();
 	mCurve.init();
+
+	mBezierSpline.init(mCurve);
+	mBSplineSpline.init(mCurve);
+	mSubdivCurve.init(mCurve.getVertices());
+
+	std::cout << mSubdivCurve.numVertices() << std::endl;
 
 	mCurveShader.init(SHADER_DIR, "curve.vs", "curve.fs");
 
@@ -60,12 +67,43 @@ void Viewer::render()
 	mCurveShader.setUniformFloat3("eye", mCamera->getEye());
 
 	//Cursor for selection is green
-	mCurveShader.setUniformFloat3("color", math::Color3{0, 1, 0});
+	mCurveShader.setUniformFloat3("color", math::Color3{0.12, 0.53, 0.18});
 	mCurveShader.setUniformMat4("model",math::Mat4::fromTranslation(mCursor.getPosition()).getRawData());
 	mCursor.Render();
 	mCurveShader.setUniformMat4("model", math::Mat4::identity().getRawData());
 
-	mCurve.Render(mCurveShader);
+	if (mControlCurveVisible) {
+		mCurveShader.setUniformFloat3("color", math::Color3{.18, .42, .72});
+		mCurve.Render(mCurveShader);
+	}
+	if (mBezierCurveVisible) {
+		mCurveShader.setUniformFloat3("color", math::Color3{0.95, 0.32, 0.26});
+		mBezierSpline.Render(mCurve);
+	}
+	if (mBSplineCurveVisible) {
+		mCurveShader.setUniformFloat3("color", math::Color3{0.07, 0.74, 0.63});
+		mBSplineSpline.Render(mCurve);
+	}
+
+	if (mSubdivCurveVisible) {
+		mCurveShader.setUniformFloat3("color", math::Color3{0.66, 0.07, 0.99});
+		mSubdivCurve.Render(mCurveShader);
+	}
 	
 	mGrid.Render(mCamera->getEye());
 }
+
+const char* Viewer::getEditModeStr() const
+{
+	return editModeStr[mMode];
+}
+
+void Viewer::changeMode()
+{
+	mMode = static_cast<EditMode>((mMode + 1) % EditMode::Size);
+}
+
+const char *Viewer::editModeStr[] = {
+		"Curve Mode",
+		"Surface Mode"
+};

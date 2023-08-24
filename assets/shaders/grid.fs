@@ -17,6 +17,6 @@ void main()
 	p *=eye.z;
 	p += eye.xy;
 	vec2 pf = 2.0*fract(p) - 1.0;
-	vec3 col = vec3(smoothstep(1.0,0.3,square(pf,vec2(0.6))));
+	vec3 col = vec3(smoothstep(1.0,0.3,square(pf,vec2(0.6))))*.8;
 	outColor = vec4(col,1.0);
 }

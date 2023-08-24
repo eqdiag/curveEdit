@@ -20,14 +20,23 @@ void ViewerUi::update()
 
     if (ImGui::BeginMainMenuBar())
     {
-        if (ImGui::BeginMenu("View"))
-        {
-            if (ImGui::MenuItem("Side Menu")) {
-                mViewer.mViewerOpen = !(mViewer.mViewerOpen);
-            }
-            ImGui::EndMenu();
-        }
 
+        /*if (ImGui::BeginMenu("File"))
+        {
+            if (ImGui::MenuItem("Export Control Curve...")) {
+                
+            }
+            if (ImGui::MenuItem("Import Control Curve...")) {
+                //mViewer.mViewerOpen = !(mViewer.mViewerOpen);
+            } 
+            ImGui::EndMenu();
+        }*/
+
+   
+        ImGui::Text("# Spline Samples: %d", mViewer.mBezierSpline.getNumberSamples());
+        ImGui::Text("# Subdivision Levels: %d", mViewer.mSubdivCurve.getSubdivisionDepth());
+
+      
         ImGui::EndMainMenuBar();
     }
 

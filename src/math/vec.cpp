@@ -137,6 +137,16 @@ math::Vec3 math::Vec3::clamp() const
 	return Vec3{intx,inty,intz};
 }
 
+math::Vec3 math::Vec3::lerp(const Vec3& rhs, float t)
+{
+	return *this * (1.0 - t) +rhs*t;
+}
+
+math::Vec3 math::Vec3::lerp(float l, float r, const Vec3& rhs, float t)
+{
+	return *this * ((r - t) / (r - l)) + rhs * ((t - l)/(r-l));
+}
+
 std::ostream& math::operator<<(std::ostream& out, const Vec3& v)
 {
 	return out << "[" << v.x() << "," << v.y() << "," << v.z() << "]\n";

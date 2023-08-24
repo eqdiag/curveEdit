@@ -16,13 +16,20 @@
 #include "cursor.h"
 
 
+
 class Viewer : public core::App {
 public:
+
+	enum EditMode{CurveMode,SurfaceMode,Size};
+
+
 	Viewer();
 	void init() override;
 	void update() override;
 	void render() override;
 
+	const char* getEditModeStr() const;
+	void changeMode();
 
 	//Input state variables
 	bool mViewerOpen;
@@ -30,6 +37,14 @@ public:
 	bool mMouseInit;
 	float mMouseX;
 	float mMouseY;
+	EditMode mMode;
+
+	//Toggle which curves are visible
+	bool mControlCurveVisible{ true };
+	bool mBezierCurveVisible{ true };
+	bool mBSplineCurveVisible{ false };
+	bool mSubdivCurveVisible{ false };
+
 
 	//Shader uniforms
 	math::Mat4 mModelMatrix{};
@@ -42,8 +57,16 @@ public:
 	//Cursor
 	Cursor mCursor{};
 
-	//Curve
+	//Control curve
 	Curve mCurve{
+		mCursor,
+		{}
+	};
+
+	//Spline
+	Bezier mBezierSpline{10};
+	BSpline mBSplineSpline{ 10 };
+	Curve mSubdivCurve{
 		mCursor,
 		{}
 	};
@@ -58,6 +81,8 @@ private:
 	//Curves
 	core::Shader mCurveShader{};
 	
+	const static char* editModeStr[];
+
 
 };
 

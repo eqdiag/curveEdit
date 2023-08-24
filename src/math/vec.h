@@ -47,6 +47,9 @@ namespace math {
 		float norm() const;
 		Vec3 normalize() const;
 		Vec3 clamp() const;
+		Vec3 lerp(const Vec3& rhs, float t);
+		Vec3 lerp(float l,float r,const Vec3& rhs, float t);
+
 
 
 	private:
