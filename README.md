@@ -44,6 +44,16 @@ make
   * `rightClick` Removes points from control curve
   * `mouseScroll` Zoom camera in/out
 
+# Demo
+## Control Curve Demo
+![Control Demo](/screenshots/control_demo.gif "Control Demo")
+## Bezier Curve Demo
+![Bezier Demo](/screenshots/bezier_demo.gif "Bezier Demo")
+## BSpline Curve Demo
+![BSpline Demo](/screenshots/bspline_demo.gif "BSpline Demo")
+## Subdivision Curve Demo
+![Subdivision Demo](/screenshots/subdiv_demo.gif "Subdivision Demo")
+
 ## Potential Future Additions
 * Saving/Loading Curves
 * [Surfaces of revolution](https://en.wikipedia.org/wiki/Surface_of_revolution#:~:text=A%20surface%20of%20revolution%20is,is%20the%20solid%20of%20revolution.)
