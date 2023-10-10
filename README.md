@@ -10,9 +10,10 @@ All dependencies are self-contained in this project using git's submodule system
 
 ```
 git clone https://github.com/eqdiag/curveEdit
-mkdir -p out/build
-cd out/build
-cmake ../..
+cd curveEdit
+mkdir build
+cd build
+cmake ..
 make
 ```
 
@@ -40,8 +41,8 @@ make
 
 
 ## Mouse Controls
-  * `leftClick` Adds points to control curve
-  * `rightClick` Removes points from control curve
+  * `leftClick` Adds point to control curve
+  * `rightClick` Removes point from control curve
   * `mouseScroll` Zoom camera in/out
 
 # Demo
